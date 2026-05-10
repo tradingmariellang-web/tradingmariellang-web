@@ -43,6 +43,7 @@ Welcome! I specialize in building tools and platforms for financial markets, com
 - **Email:** [Your email]
 
 **Open to collaboration on Fintech, Trading Systems, and Web Development projects.**
+[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](YOUR_DISCORD_INVITE_LINK)
 
 ---
 
