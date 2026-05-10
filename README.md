@@ -18,3 +18,4 @@ Discord Bots: Using discord.py to send real-time price alerts or trade signals d
 Data Scraping: Pulling news and economic calendar updates automatically.
 Next Step: When you create your first Python file on GitHub, use the .py extension. This will automatically tell GitHub to list "Python" in your account's language statistics!
 Do you want me to write a basic Python script for you that pulls live Crypto or Forex prices to get your repository started?
+🛠️ Tech Stack & Tools
