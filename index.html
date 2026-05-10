@@ -125,4 +125,106 @@
                 const data = await res.json();
                 document.getElementById('btc-val').innerText = `$${data.bitcoin.usd.toLocaleString()}`;
                 document.getElementById('eth-val').
-      
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIG OVIE 1 | TECH_FLOW_V2</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --emerald: #00ff00;
+            --yellow: #ffff00;
+            --gold: #ffd700;
+            --scanline: rgba(18, 16, 16, 0.15);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* TECH FLOW OVERLAY (SCANLINES & STATIC) */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(var(--scanline) 50%, rgba(0, 0, 0, 0.2) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
+            z-index: 9999;
+            pointer-events: none;
+            background-size: 100% 3px, 3px 100%;
+        }
+
+        /* 3D ROTATING BANNER */
+        #ticker {
+            background: #080808;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: rotate3D 12s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes rotate3D {
+            0% { transform: perspective(1000px) rotateX(0deg); }
+            100% { transform: perspective(1000px) rotateX(360deg); }
+        }
+
+        .price { font-weight: bold; margin: 0 15px; color: var(--emerald); font-size: 0.9rem; }
+
+        /* FLICKER BRANDING */
+        .brand-title {
+            color: var(--yellow);
+            font-size: 2.2rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            animation: flicker 4s linear infinite;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 22%, 24%, 55% { opacity: 0.4; }
+        }
+
+        .status-pulse {
+            color: var(--emerald);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; text-shadow: 0 0 0px var(--emerald); }
+            50% { opacity: 1; text-shadow: 0 0 10px var(--emerald); }
+        }
+
+        /* TERMINAL LOGS */
+        #console {
+            background: rgba(5, 5, 5, 0.9);
+            border: 1px solid #333;
+            padding: 15px;
+            height: 140px;
+            margin-top: 20px;
+            border-left: 4px solid var(--emerald);
+            position: relative;
+        }
+
+        .log { color: var(--emerald); font-size: 0.8rem; margin: 4px 0; line-height: 1.2; }
+        
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height:
+        
