@@ -1,51 +1,310 @@
-<p align="center">
-<span>BTC: <span id="btc-price" class="green">Scanning...</span></span>
-<span>ETH: <span id="eth-price" class="green">Scanning...</span></span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Intelligence | Crypto</title>
+    <style>
+        /* TERMINAL THEME STYLING */
+        const logs = [
+    "> Analyzing market volatility...",
+    "> Signal detected: Bullish momentum on SOL/USDT",
+    "> Liquidity depth checked: Institutional Tier 1",
+    "> Executing Web3 connection protocol...",
+    "> SYS_READY: Awaiting user input."
+];
 
-# 🚀 Web Developer & Algorithmic Trading Strategist
+function addLog() {
+    const output = document.getElementById('log-output');
+    const newLog = document.createElement('p');
+    newLog.className = 'log-entry';
+    newLog.innerText = logs[Math.floor(Math.random() * logs.length)];
+    
+    output.appendChild(newLog);
+    
+    // Keep only the last 5 logs visible
+    if (output.childNodes.length > 6) {
+        output.removeChild(output.firstChild);
+    }
+}
 
-# 🚀 Web Developer & Algorithmic Trading Strategist
+// Add a new log every 4 seconds
+setInterval(addLog, 4000);
 
-Welcome! I specialize in building tools and platforms for financial markets, combining web development expertise with algorithmic trading strategies.
+        body {
+            background-color: #ffffff; /* White background from your screenshot */
+            color: #000;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-## 📊 Technical Focus
+        /* LIVE TICKER HEADER */
+        .ticker-wrap {
+            background: #000;
+            color: #ffffff;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
 
-- **Algorithmic Trading:** Python-based trading scripts leveraging pandas, ccxt, and quantitative analysis
-- **Web Development:** Responsive, high-performance trading interfaces and data visualization dashboards
-- **Automation:** Discord bots and community management tools for trading communities
-- **Data Engineering:** Real-time market data aggregation and analysis pipelines
+        #crypto-ticker {
+            display: flex;
+            gap: 20px;
+        }
 
-## 🛠️ Tech Stack & Tools
+        .ticker-green {
+            color: #00FF41; /* Cyber Green */
+        }
 
-**Languages & Frameworks:**
-- Python (Trading bots, data analysis, automation)
-- JavaScript / React (Web UI components)
-- Node.js (Backend services)
+        /* NAVIGATION & MENU */
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
 
-**Trading & Finance:**
-- Pandas & NumPy (Data analysis)
-- CCXT (Multi-exchange crypto connectivity)
-- discord.py (Discord bot automation)
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
 
-**Web & DevOps:**
-- React / Tailwind CSS (Responsive frontends)
-- REST APIs / WebSockets (Real-time data)
-- Docker & GitHub Actions (CI/CD)
+        .menu-btn {
+            font-size: 2rem;
+            cursor: pointer;
+        }
 
-## 🛠️ Featured Projects
+        #mobileMenu {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            background: #f4f4f4;
+            padding: 20px;
+            border-bottom: 2px solid #000;
+        }
 
-- **Trading-Web-UI** - Clean, mobile-responsive front-end for trade signal visualization and portfolio management
-- **Discord-Nexus** - Community management automation with verification gates and real-time trading alerts for Discord servers
+        #mobileMenu a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 0;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
 
-## 🤝 Let's Connect
+        /* CONTENT SECTIONS */
+        .content-area {
+            padding: 20px;
+        }
 
-- **Discord:** [Your Trading Server Link]
-- **GitHub:** [You're here!]
-- **Email:** [Your email]
+        .status-tag {
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
 
-**Open to collaboration on Fintech, Trading Systems, and Web Development projects.**
-[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](YOUR_DISCORD_INVITE_LINK)
+        h1, h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+            font-weight: 900;
+        }
 
----
+        p {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            color: #333;
+        }
 
-*Built with Python, JavaScript/React, and a passion for financial markets.*
+        .divider {
+            border-top: 1px solid #000;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="ticker-wrap">
+        <div id="crypto-ticker">
+            <span>BTC: <span class="ticker-green">$--</span></span>
+            <span>ETH: <span class="ticker-green">$--</span></span>
+        </div>
+        <div style="font-size: 0.7rem;">LIVE_FEED</div>
+    </header>
+
+    <div class="header-main">
+        <div class="brand">BIG OVIE 1</div>
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+    </div>
+
+    <nav id="mobileMenu">
+        <a href="#">TERMINAL_DASHBOARD</a>
+        <a href="#">BLOCKCHAIN_ARCHIVE</a>
+        <a href="#">SYSTEM_SETTINGS</a>
+        <a href="https://github.com">GITHUB_REPO</a>
+    </nav>
+
+    <main class="content-area">
+        <span class="status-tag">SYS.TRADING_ACTIVE</span>
+        
+        <h2>Institutional Intelligence</h2>
+        <p>Advanced decentralized brokerage interfaces optimized for mobile environments.</p>
+
+        <div class="divider"></div>
+
+        <span class="status-tag">DEV.ENV_MOBILE</span>
+        <h2>Web3 Architecture</h2>
+        <p>Real-time on-chain analysis and cross-chain protocol integration.</p>
+
+        <div class="divider"></div>
+        
+        <span class="status-tag">CRYPTO_ASSETS</span>
+        <h1>CRYPTO</h1>
+    </main>
+
+    <script>
+        // Toggle the Mobile Navigation
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+
+        // Fetch Live Crypto Prices
+        async function fetchPrices() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+                const data = await response.json();
+                
+                document.getElementById('crypto-ticker').innerHTML = `
+                    <span>BTC: <span class="ticker-green">$${data.bitcoin.usd.toLocaleString()}</span></span>
+                    <span>ETH: <span class="ticker-green">$${data.ethereum.usd.toLocaleString()}</span></span>
+                `;
+            } catch (error) {
+                document.getElementById('crypto-ticker').innerText = "NODE_OFFLINE";
+            }
+        }
+
+        // Run Price Update
+        fetchPrices();
+        setInterval(fetchPrices, 60000); // Updates every minute
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading-Web-UI | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>tradingmariellang-web</h1>
+    </header>
+
+    <main>
+        <section id="chart-container">
+            <div class="placeholder-chart">Market Analysis Loading...</div>
+        </section>
+
+        <section id="trade-history">
+            <h3>Recent Signals</h3>
+            <table>
+                <tr>
+                    <th>Pair</th>
+                    <th>Action</th>
+                    <th>Price</th>
+                </tr>
+                </table>
+        </section>
+    </main>
+</body>
+</html>
+<table>
+    <tr>
+        <th>Market</th>
+        <th>Signal</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>BTC/USDT</td>
+        <td class="buy">BUY</td>
+        <td>$64,230.50</td>
+    </tr>
+    <tr>
+        <td>ETH/USDT</td>
+        <td class="sell">SELL</td>
+        <td>$3,450.20</td>
+    </tr>
+    <tr>
+        <td>SOL/USDT</td>
+        <td class="buy">BUY</td>
+        <td>$145.10</td>
+    </tr>
+</table>
+<div id="live-ticker-banner" class="high-contrast-bar">
+    <div class="ticker-content">
+        <span>BTC: <span class="green">$81,256</span></span>
+        <span>ETH: <span class="green">$2,358.52</span></span>
+        <span class="live-feed-tag">LIVE_FEED</span>
+    </div>
+</div>
+<section id="terminal-console">
+    <div class="console-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="console-title">SYS_LOGS_TERMINAL</span>
+    </div>
+<script>
+    const logOutput = document.getElementById('log-output');
+    
+    // Function to update the terminal logs
+    function addLog(message) {
+        const newLog = document.createElement('p');
+        newLog.className = 'log-entry';
+        newLog.innerText = `> ${message}`;
+        logOutput.appendChild(newLog);
+        if (logOutput.childNodes.length > 6) {
+            logOutput.removeChild(logOutput.firstChild);
+        }
+    }
+
+    // Function to fetch real market data
+    async function updatePrices() {
+        try {
+            addLog("Syncing with Global Liquidity Pools...");
+            const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+            const data = await response.json();
+
+            const btcPrice = data.bitcoin.usd.toLocaleString();
+            const ethPrice = data.ethereum.usd.toLocaleString();
+
+            // Updating the 3D Banner elements (Ensure IDs match your HTML)
+            document.getElementById('btc-price').innerText = `$${btcPrice}`;
+            document.getElementById('eth-price').innerText = `$${ethPrice}`;
+
+            addLog(`Market Data Updated: BTC at $${btcPrice}`);
+        } catch (error) {
+            addLog("ERR: Connection Timeout. Retrying...");
+        }
+    }
+
+    // Initial run and set interval (every 30 seconds to avoid rate limits)
+    updatePrices();
+    setInterval(updatePrices, 30000);
+</script>
+    </div>
+</section>
+<div class="ticker-content">
+    <span>BTC: <span id="btc-price" class="green">Loading...</span></span>
+    <span>ETH: <span id="eth-price" class="green">Loading...</span></span>
+</div>
