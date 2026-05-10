@@ -322,3 +322,92 @@ body::before {
     0%, 100% { text-shadow: 0 0 5px var(--brand-green); opacity: 0.8; }
     50% { text-shadow: 0 0 20px var(--brand-green); opacity: 1; }
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIG OVIE 1 | Tech Flow</title>
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --emerald: #00ff00;
+            --gold: #ffd700;
+            --yellow: #ffff00;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0; padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* TECH FLOW SCANLINES */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 9999;
+            pointer-events: none;
+            background-size: 100% 3px, 3px 100%;
+        }
+
+        .brand-title {
+            color: var(--yellow);
+            font-size: 2.2rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            animation: flicker 4s linear infinite;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 22%, 24%, 55% { opacity: 0.5; }
+        }
+
+        #terminal {
+            background: #050505;
+            border: 1px solid #333;
+            padding: 15px;
+            height: 120px;
+            border-left: 4px solid var(--emerald);
+        }
+
+        .log-entry { color: var(--emerald); font-size: 0.8rem; margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+    <p style="color: var(--emerald); font-size: 0.7rem; letter-spacing: 2px;">● SYS.TRADING_ACTIVE</p>
+    <h1 class="brand-title">BIG OVIE 1</h1>
+    
+    <div id="terminal">
+        <div id="log-output"></div>
+    </div>
+
+    <script>
+        const logs = [
+            "> Initializing Institutional Intelligence...",
+            "> Connection established: Web3_Architecture",
+            "> Syncing Global Liquidity Pools...",
+            "> Signal detected: Bullish momentum"
+        ];
+
+        function addLog() {
+            const output = document.getElementById('log-output');
+            const p = document.createElement('p');
+            p.className = 'log-entry';
+            p.innerText = logs[Math.floor(Math.random() * logs.length)];
+            output.appendChild(p);
+            if (output.childNodes.length > 5) output.removeChild(output.firstChild);
+        }
+        setInterval(addLog, 3000);
+    </script>
+</body>
+</html>
