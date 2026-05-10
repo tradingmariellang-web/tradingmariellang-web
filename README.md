@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://path-to-your-uploaded-image.png" alt="tradingmariellang-web logo" width="350">
-</p>
+<span>BTC: <span id="btc-price" class="green">Scanning...</span></span>
+<span>ETH: <span id="eth-price" class="green">Scanning...</span></span>
+
 # 🚀 Web Developer & Algorithmic Trading Strategist
 
 # 🚀 Web Developer & Algorithmic Trading Strategist
