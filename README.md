@@ -1,18 +1,10 @@
-​🚀 tradingmariellang-web
-​Web Developer & Algorithmic Trading Strategist
-​Welcome to my GitHub. I build tools for the financial markets, focusing on Web Technology, Python Automation, and Market Analysis.
-​📊 Trading & Technical Focus
-​Algorithmic Trading: Developing scripts in Python to automate market data collection and analysis.
-​Web Portals: Crafting responsive, high-performance dashboards for Crypto & Forex tracking.
-​Data Patterns: Analyzing market volatility and price action using custom technical indicators.
-​💻 My Tech Stack
-​Languages: * Python (Data Analysis & Automation)
-​HTML5 & CSS3 (Interface Design)
-​JavaScript (Interactive Market Charts)
-​Trading Tools: TradingView (Pine Script), MetaTrader, Crypto APIs
-​Environment: Advanced Mobile Development via Android
-​🛠 Active Projects
-​Trade-Bot-Core: A Python-based framework for monitoring Forex pairs.
+# 🚀 Web Developer & Algorithmic Trading Strategist
+
+Welcome to my GitHub! I build tools for the financial markets...
+
+### 📊 Trading & Technical Focus
+* **Algorithmic Trading:** Developing scripts in Python...
+* **Web Portals:** Crafting responsive, high-performance...
 ​Trading-Web-UI: A clean, mobile-responsive front-end for trade signal visualization.
 ​Discord-Nexus: Automating community management and verification gates for my trading server.
 ​📊 GitHub Activity
