@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="https://path-to-your-uploaded-image.png" alt="tradingmariellang-web logo" width="350">
+</p>
+
+# 🚀 Web Developer & Algorithmic Trading Strategist
+
 # 🚀 Web Developer & Algorithmic Trading Strategist
 
 Welcome! I specialize in building tools and platforms for financial markets, combining web development expertise with algorithmic trading strategies.
