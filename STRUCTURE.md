@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://path-to-your-uploaded-image.png" alt="tradingmariellang-web logo" width="350">
+</p>
+
+# 🚀 Web Developer & Algorithmic Trading Strategist
 ```
 # Trading Platform Project Structure
 
