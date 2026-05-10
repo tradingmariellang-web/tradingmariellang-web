@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIG OVIE 1 | Tech Flow</title>
+    <title>BIG OVIE 1 | Institutional Intelligence</title>
     <style>
         :root {
             --bg-dark: #000000;
@@ -14,26 +14,114 @@
 
         body {
             background-color: var(--bg-dark);
-            color: #e0e0e0;
+            color: #ffffff;
             font-family: 'Courier New', monospace;
-            margin: 0; padding: 20px;
-            overflow-x: hidden;
+            margin: 0;
+            padding: 20px;
         }
 
-        /* TECH FLOW SCANLINES */
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-            z-index: 9999;
-            pointer-events: none;
-            background-size: 100% 3px, 3px 100%;
+        /* Smooth 3D Rotating Banner */
+        #ticker-banner {
+            background: #111;
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: rotateBanner 12s linear infinite;
+            margin-bottom: 30px;
         }
 
-        .brand-title {
+        @keyframes rotateBanner {
+            0% { transform: perspective(1000px) rotateX(0deg); }
+            100% { transform: perspective(1000px) rotateX(360deg); }
+        }
+
+        .price-text { font-weight: bold; margin: 0 15px; }
+        .green { color: var(--emerald); }
+
+        /* Solid Yellow Heading */
+        h1.brand-title {
+            color: var(--yellow);
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .sys-label {
+            color: var(--emerald);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        /* Clean Terminal Output */
+        #log-container {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            padding: 15px;
+            margin-top: 20px;
+            height: 140px;
+            overflow: hidden;
+        }
+
+        .log-line {
+            color: var(--emerald);
+            font-size: 0.85rem;
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ticker-banner">
+        <div class="price-text">BTC: <span id="btc-val" class="green">...</span></div>
+        <div class="price-text">ETH: <span id="eth-val" class="green">...</span></div>
+    </div>
+
+    <p class="sys-label">SYS.TRADING_ACTIVE</p>
+    <h1 class="brand-title">BIG OVIE 1</h1>
+    
+    <div style="margin-top: 10px; opacity: 0.7;">
+        <h3>Institutional Intelligence</h3>
+        <p>Web3 Architecture & Advanced Data Visualization</p>
+    </div>
+
+    <div id="log-container">
+        <div id="log-output"></div>
+    </div>
+
+    <script>
+        const output = document.getElementById('log-output');
+        
+        function addLog(text) {
+            const p = document.createElement('p');
+            p.className = 'log-line';
+            p.innerText = `> ${text}`;
+            output.appendChild(p);
+            if (output.childNodes.length > 6) output.removeChild(output.firstChild);
+        }
+
+        async function getMarket() {
+            try {
+                const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+                const data = await res.json();
+                document.getElementById('btc-val').innerText = `$${data.bitcoin.usd.toLocaleString()}`;
+                document.getElementById('eth-val').innerText = `$${data.ethereum.usd.toLocaleString()}`;
+                addLog(`Price Update: BTC at $${data.bitcoin.usd}`);
+            } catch (e) {
+                addLog("Re-connecting to liquidity pools...");
+            }
+        }
+
+        setInterval(getMarket, 30000);
+        getMarket();
+        addLog("Institutional System Online.");
+    </script>
+</body>
+</html>
             color: var(--yellow);
             font-size: 2.2rem;
             letter-spacing: 6px;
