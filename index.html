@@ -3,340 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIG OVIE 1 | Institutional Intelligence</title>
+    <title>BIG OVIE 1 | TECH_FLOW_V2</title>
     <style>
         :root {
-            --bg-dark: #000000;
+            --bg: #000000;
             --emerald: #00ff00;
-            --gold: #ffd700;
             --yellow: #ffff00;
+            --gold: #ffd700;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* Smooth 3D Rotating Banner */
-        #ticker-banner {
-            background: #111;
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform-style: preserve-3d;
-            animation: rotateBanner 12s linear infinite;
-            margin-bottom: 30px;
-        }
-
-        @keyframes rotateBanner {
-            0% { transform: perspective(1000px) rotateX(0deg); }
-            100% { transform: perspective(1000px) rotateX(360deg); }
-        }
-
-        .price-text { font-weight: bold; margin: 0 15px; }
-        .green { color: var(--emerald); }
-
-        /* Solid Yellow Heading */
-        h1.brand-title {
-            color: var(--yellow);
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        .sys-label {
-            color: var(--emerald);
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-        }
-
-        /* Clean Terminal Output */
-        #log-container {
-            background: #0a0a0a;
-            border: 1px solid #333;
-            padding: 15px;
-            margin-top: 20px;
-            height: 140px;
-            overflow: hidden;
-        }
-
-        .log-line {
-            color: var(--emerald);
-            font-size: 0.85rem;
-            margin: 4px 0;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="ticker-banner">
-        <div class="price-text">BTC: <span id="btc-val" class="green">...</span></div>
-        <div class="price-text">ETH: <span id="eth-val" class="green">...</span></div>
-    </div>
-
-    <p class="sys-label">SYS.TRADING_ACTIVE</p>
-    <h1 class="brand-title">BIG OVIE 1</h1>
-    
-    <div style="margin-top: 10px; opacity: 0.7;">
-        <h3>Institutional Intelligence</h3>
-        <p>Web3 Architecture & Advanced Data Visualization</p>
-    </div>
-
-    <div id="log-container">
-        <div id="log-output"></div>
-    </div>
-
-    <script>
-        const output = document.getElementById('log-output');
-        
-        function addLog(text) {
-            const p = document.createElement('p');
-            p.className = 'log-line';
-            p.innerText = `> ${text}`;
-            output.appendChild(p);
-            if (output.childNodes.length > 6) output.removeChild(output.firstChild);
-        }
-
-        async function getMarket() {
-            try {
-                const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
-                const data = await res.json();
-                document.getElementById('btc-val').innerText = `$${data.bitcoin.usd.toLocaleString()}`;
-                document.getElementById('eth-val').innerText = `$${data.ethereum.usd.toLocaleString()}`;
-                addLog(`Price Update: BTC at $${data.bitcoin.usd}`);
-            } catch (e) {
-                addLog("Re-connecting to liquidity pools...");
-            }
-        }
-
-        setInterval(getMarket, 30000);
-        getMarket();
-        addLog("Institutional System Online.");
-    </script>
-</body>
-</html>
-            color: var(--yellow);
-            font-size: 2.2rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin: 10px 0;
-            animation: flicker 4s linear infinite;
-        }
-
-        @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-            20%, 22%, 24%, 55% { opacity: 0.5; }
-        }
-
-        #terminal {
-            background: #050505;
-            border: 1px solid #333;
-            padding: 15px;
-            height: 120px;
-            border-left: 4px solid var(--emerald);
-        }
-
-        .log-entry { color: var(--emerald); font-size: 0.8rem; margin: 5px 0; }
-    </style>
-</head>
-<body>
-
-    <p style="color: var(--emerald); font-size: 0.7rem; letter-spacing: 2px;">● SYS.TRADING_ACTIVE</p>
-    <h1 class="brand-title">BIG OVIE 1</h1>
-    
-    <div id="terminal">
-        <div id="log-output"></div>
-    </div>
-
-    <script>
-        const logs = [
-            "> Initializing Institutional Intelligence...",
-            "> Connection established: Web3_Architecture",
-            "> Syncing Global Liquidity Pools...",
-            "> Signal detected: Bullish momentum"
-        ];
-
-        function addLog() {
-            const output = document.getElementById('log-output');
-            const p = document.createElement('p');
-            p.className = 'log-entry';
-            p.innerText = logs[Math.floor(Math.random() * logs.length)];
-            output.appendChild(p);
-            if (output.childNodes.length > 5) output.removeChild(output.firstChild);
-        }
-        setInterval(addLog, 3000);
-    </script>
-</body>
-</html>
-section>
-    </main>
-</body>
-</html>
-<table>
-    <tr>
-        <th>Market</th>
-        <th>Signal</th>
-        <th>Price</th>
-    </tr>
-    <tr>
-        <td>BTC/USDT</td>
-        <td class="buy">BUY</td>
-        <td>$64,230.50</td>
-    </tr>
-    <tr>
-        <td>ETH/USDT</td>
-        <td class="sell">SELL</td>
-        <td>$3,450.20</td>
-    </tr>
-    <tr>
-        <td>SOL/USDT</td>
-        <td class="buy">BUY</td>
-        <td>$145.10</td>
-    </tr>
-</table>
-<div id="live-ticker-banner" class="high-contrast-bar">
-    <div class="ticker-content">
-        <span>BTC: <span class="green">$81,256</span></span>
-        <span>ETH: <span class="green">$2,358.52</span></span>
-        <span class="live-feed-tag">LIVE_FEED</span>
-    </div>
-</div>
-<section id="terminal-console">
-    <div class="console-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="console-title">SYS_LOGS_TERMINAL</span>
-    </div>
-    <div id="log-output">
-        <p class="log-entry">> Initializing Institutional Intelligence...</p>
-        <p class="log-entry">> Connection established: Web3_Architecture</p>
-        <p class="log-entry">> Monitoring BTC/ETH live feeds...</p>
-    </div>
-</section>
-/* The "Tech Flow" Scanline Effect */
-body::before {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    z-index: 9999;
-    pointer-events: none;
-    background-size: 100% 2px, 3px 100%;
-}
-
-/* Flicker Animation for "BIG OVIE 1" */
-.brand-title {
-    animation: tech-flicker 3s linear infinite;
-}
-
-@keyframes tech-flicker {
-    0% { opacity: 1; }
-    3% { opacity: 0.4; }
-    6% { opacity: 1; }
-    7% { opacity: 0.4; }
-    8% { opacity: 1; }
-    45% { opacity: 1; }
-    46% { opacity: 0.4; }
-    47% { opacity: 1; }
-    100% { opacity: 1; }
-}
-
-/* Institutional Status Pulse */
-.sys-status {
-    color: var(--brand-green);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-    0%, 100% { text-shadow: 0 0 5px var(--brand-green); opacity: 0.8; }
-    50% { text-shadow: 0 0 20px var(--brand-green); opacity: 1; }
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIG OVIE 1 | Tech Flow</title>
-    <style>
-        :root {
-            --bg-dark: #000000;
-            --emerald: #00ff00;
-            --gold: #ffd700;
-            --yellow: #ffff00;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: #e0e0e0;
+            background-color: var(--bg);
+            color: #fff;
             font-family: 'Courier New', monospace;
             margin: 0; padding: 20px;
             overflow-x: hidden;
         }
 
-        /* TECH FLOW SCANLINES */
+        /* TECH FLOW OVERLAY (SCANLINES) */
         body::before {
             content: " ";
             display: block;
             position: fixed;
             top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
             z-index: 9999;
             pointer-events: none;
             background-size: 100% 3px, 3px 100%;
         }
 
+        /* 3D ROTATING BANNER */
+        #ticker {
+            background: #080808;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: rotate3D 12s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes rotate3D {
+            0% { transform: perspective(1000px) rotateX(0deg); }
+            100% { transform: perspective(1000px) rotateX(360deg); }
+        }
+
+        .price { font-weight: bold; margin: 0 15px; color: var(--emerald); }
+
+        /* FLICKER BRANDING */
         .brand-title {
             color: var(--yellow);
-            font-size: 2.2rem;
-            letter-spacing: 6px;
+            font-size: 2.3rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            margin: 10px 0;
             animation: flicker 4s linear infinite;
         }
 
         @keyframes flicker {
             0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-            20%, 22%, 24%, 55% { opacity: 0.5; }
+            20%, 22%, 24%, 55% { opacity: 0.3; }
         }
 
-        #terminal {
+        .status-pulse {
+            color: var(--emerald);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; text-shadow: 0 0 0px var(--emerald); }
+            50% { opacity: 1; text-shadow: 0 0 10px var(--emerald); }
+            100% { opacity: 0.5; text-shadow: 0 0 0px var(--emerald); }
+        }
+
+        /* TERMINAL LOGS */
+        #console {
             background: #050505;
             border: 1px solid #333;
             padding: 15px;
-            height: 120px;
+            height: 140px;
+            margin-top: 20px;
             border-left: 4px solid var(--emerald);
         }
 
-        .log-entry { color: var(--emerald); font-size: 0.8rem; margin: 5px 0; }
+        .log { color: var(--emerald); font-size: 0.85rem; margin: 4px 0; }
     </style>
 </head>
 <body>
 
-    <p style="color: var(--emerald); font-size: 0.7rem; letter-spacing: 2px;">● SYS.TRADING_ACTIVE</p>
+    <div id="ticker">
+        <div class="price">BTC: <span id="btc-val">LOADING...</span></div>
+        <div class="price">ETH: <span id="eth-val">LOADING...</span></div>
+    </div>
+
+    <p class="status-pulse">● SYS.CONNECTION_SECURE // ARCH.V2</p>
     <h1 class="brand-title">BIG OVIE 1</h1>
-    
-    <div id="terminal">
-        <div id="log-output"></div>
+
+    <div id="console">
+        <div id="log-out"></div>
     </div>
 
     <script>
-        const logs = [
-            "> Initializing Institutional Intelligence...",
-            "> Connection established: Web3_Architecture",
+        const logOut = document.getElementById('log-out');
+        
+        function addLog(msg) {
+            const p = document.createElement('p');
+            p.className = 'log';
+            p.innerText = `> ${msg}`;
+            logOut.appendChild(p);
+            if (logOut.childNodes.length > 6) logOut.removeChild(logOut.firstChild);
+        }
+
+        async function fetchMarket() {
+            try {
+                const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+                const data = await res.json();
+                document.getElementById('btc-val').innerText = `$${data.bitcoin.usd.toLocaleString()}`;
+                document.getElementById('eth-val').
+tion established: Web3_Architecture",
             "> Syncing Global Liquidity Pools...",
             "> Signal detected: Bullish momentum"
         ];
