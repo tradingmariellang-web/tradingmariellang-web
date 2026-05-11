@@ -33,3 +33,4 @@ Email: [Your email]
 Open to collaboration on Fintech, Trading Systems, and Web Development projects. Discord
 
 Built with Python, JavaScript/React, and a passion for financial markets.
+
