@@ -1,5 +1,0 @@
-📂 tradingmariellang-web (Your Main Repository Folder)
- ├── 📂 .github
- │    └── 📂 workflows
- │         └── 📄 main.yml       <-- Your workflow configuration file must be here
- └── 📄 index.html              <-- Your core web layout file must be out here
