@@ -1,4 +1,4 @@
-name: "Deploy Production Dashboard"
+github/: "Deploy Production Dashboard"
 
 on:
   push:
