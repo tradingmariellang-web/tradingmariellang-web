@@ -1,4 +1,4 @@
-name: "Tradingmariellang Mainframe Build & Deploy"
+name:"Tradingmariellang Mainframe Build & Deploy"
 
 on:
   push:
