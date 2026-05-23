@@ -1,0 +1,11 @@
+<div style="background-color: #0d0f14; border: 1px solid #1b202c; border-radius: 8px; padding: 16px; margin-top: 16px;">
+    <h3 style="color: #e2e4e9; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+        <span>📸</span> System Transaction Screenshot Proof
+    </h3>
+    <div style="position: relative; overflow: hidden; border-radius: 6px; border: 1px solid #13171f; line-height: 0;">
+        <img src="1000018664_2.jpg" alt="Verified Transaction Layout Proof" style="width: 100%; height: auto; object-fit: cover; filter: brightness(0.95) contrast(1.05);">
+    </div>
+    <div style="margin-top: 10px; text-align: center;">
+        <a href="1000018664_2.jpg" target="_blank" style="color: #22e565; text-decoration: none; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">🔍 Expand Fullscreen Ledger</a>
+    </div>
+</div>
