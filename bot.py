@@ -107,4 +107,4 @@ BOT_TOKEN = "YOUR_DISCORD_BOT_TOKEN_HERE"
 
 if __name__ == "__main__":
     bot.run(BOT_TOKEN)
-      
+      MTUwNzc5OTQ3NTUzNDQzMDM0OQ.GOPyWp.Yc3UZf5gVk3iHLEL5nR-CFqUsSKQrt-1HwdUVU
