@@ -2,7 +2,8 @@ name:"Tradingmariellang Mainframe Build & Deploy"
 on:
 push:
    branches:
-    - main:
+    - main
+    
           pip install discord.py aiohttp flake8
 
       - name: Run Syntax and Compilation Lint Tests
