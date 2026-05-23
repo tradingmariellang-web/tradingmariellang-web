@@ -31,4 +31,40 @@ async def log_win(ctx, amount: str = "3200", asset: str = "USDT"):
     
     await ctx.message.delete() # Cleans up the raw trigger command
     await ctx.send(embed=embed)
+    import discord
+from discord.ext import commands
+import datetime
+
+# Setup command matrix mapping
+bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
+
+@bot.command(name="logwin")
+@commands.has_permissions(administrator=True)
+async def log_client_payout(ctx, volume: str = "3200", unit: str = "USDT"):
+    """
+    Streams a secure ledger validation embed directly to the community channels.
+    Matches the premium institutional branding arrays of Tradingmariellang-web3.
+    """
+    embed = discord.Embed(
+        title="⚡ [ SYSTEM PAYOUT LEDGER // VERIFIED ]",
+        description="A multi-asset routing vector has completed secure clearing on the decentralized rail network.",
+        color=0x22e565, # Exact premium green hex code matching your UI
+        timestamp=datetime.datetime.utcnow()
+    )
+    
+    # Structural Data Anchors
+    embed.add_field(name="💰 Allocation Matrix", value=f"`+{volume} {unit.upper()}`", inline=False)
+    embed.add_field(name="🟢 Status Vector", value="`FILLED / COMPLETE`", inline=True)
+    embed.add_field(name="⛽ Transaction Surcharge", value="`0.00 TRX (TRC-20)`", inline=True)
+    embed.add_field(name="🔗 Ledger Verification Node", value="`TXppY67...NScNp`", inline=False)
+    
+    embed.set_footer(text="Tradingmariellang-web3 // Mainframe Deployment Node")
+    
+    # Wipe the trigger text command to keep the terminal channel spotless
+    try:
+        await ctx.message.delete()
+    except discord.Forbidden:
+        pass
+        
+    await ctx.send(embed=embed)
     
