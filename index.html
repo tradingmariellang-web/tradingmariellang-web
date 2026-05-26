@@ -3,38 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIG OVIE 1 | TECH_FLOW_V2</title>
+    <title>Tradingmariellang-web3 // Premium Hub</title>
     <style>
+        /* Premium Dark Institutional Interface Engine */
         :root {
-            --bg: #000000;
-            --emerald: #00ff00;
-            --yellow: #ffff00;
-            --gold: #ffd700;
-            --scanline: rgba(18, 16, 16, 0.15);
+            --bg-deep-space: #07080a;
+            --bg-panel-dark: #0d0f14;
+            --bg-input-field: #13171f;
+            --accent-glow-green: #22e565;
+            --accent-dim-green: rgba(34, 229, 101, 0.15);
+            --border-grey-dark: #1b202c;
+            --text-silver-bright: #e2e4e9;
+            --text-grey-muted: #646b7c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg);
-            color: #fff;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
-            overflow-x: hidden;
+            background-color: var(--bg-deep-space);
+            color: var(--text-silver-bright);
+            padding: 12px;
+            font-size: 14px;
         }
 
-        /* TECH FLOW OVERLAY (SCANLINES & STATIC) */
-        body::before {
-            content: " ";
+        /* Top Institutional Banner Grid */
+        header {
+            background: var(--bg-panel-dark);
+            border: 1px solid var(--border-grey-dark);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+          <div id="ticker-header" style="padding: 8px; border-bottom: 1px solid #30363d; margin-bottom: 10px;">
+    <span style="color: #8b949e; font-size: 0.7rem;">BTC_RELAY: </span>
+    <span id="btc-live-price" class="glitch" data-text="LOADING..." style="color: #00ffcc; font-family: monospace;">LOADING...</span>
+</div>
+
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        .balance-pill {
+            background: var(--bg-input-field);
+            border: 1px solid var(--border-grey-dark);
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-align: right;
+        }
+
+        .balance-pill span {
+            color: var(--text-grey-muted);
+            font-size: 0.75rem;
             display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(var(--scanline) 50%, rgba(0, 0, 0, 0.2) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
-            z-index: 9999;
-            pointer-events: none;
-            background-size: 100% 3px, 3px 100%;
+            text-transform: uppercase;
         }
 
+        .balance-pill h3 {
+            color: var(--text-silver-bright);
+            font-size: 1.05rem;
+            font-weight: bold;
+        }
+
+        /* Master Dashboard Structural Split Layout */
+        .workspace-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 992px) {
+            .workspace-layout {
+                grid-template-columns: 280px 1fr;
+            }
+        }
+
+        /* Side Command Console Layout */
+        <a href="#" class="menu-item" data-target="Investments"><i class="fas fa-chart-line"></i> Investments</a>
+<div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+    
+    <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 16px; position: relative;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-weight: bold; color: #ffffff; font-size: 1rem; letter-spacing: 0.5px;">SATOSHI PLAN</span>
+            <span style="color: #26a69a; font-family: monospace; font-weight: bold; font-size: 1.1rem;">+6.2% <span style="font-size: 0.75rem; color: #8b949e;">APY</span></span>
+        </div>
+        <div style="font-size: 0.8rem; color: #8b949e; font-family: monospace; display: flex; flex-direction: column; gap: 4px;">
+            <span>MIN_ALLOCATION: 1.00 BTC</span>
+            <span>LOCK_DURATION: 30 DAYS</span>
+            <span>ASSET_CLASS: NATIVE BTC</span>
+        </div>
+        <button type="button" class="btn-tier-select" data-plan="Satoshi Plan" data-min="1" data-apy="6.2" data-asset="BTC" style="margin-top: 14px; width: 100%; background: #21262d; border: 1px solid #30363d; color: #c9d1d9; padding: 10px; border-radius: 4px; font-weight: bold; font-family: monospace; cursor: pointer; text-transform: uppercase; font-size: 0.8rem;">Initialize Satoshi Matrix</button>
+    </div>
+
+    <div style="background: #0d1117; border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 6px; padding: 16px; position: relative;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-weight: bold; color: #00ffcc; font-size: 1rem; letter-spacing: 0.5px;">SHARK PLAN</span>
+            <span style="color: #00ffcc; font-family: monospace; font-weight: bold; font-size: 1.1rem;">+9.8% <span style="font-size: 0.75rem; color: #8b949e;">APY</span></span>
+        </div>
+        <div style="font-size: 0.8rem; color: #8b949e; font-family: monospace; display: flex; flex-direction: column; gap: 4px;">
+            <span>MIN_ALLOCATION: 10.00 BTC</span>
+            <span>LOCK_DURATION: 60 DAYS</span>
+            <span>ASSET_CLASS: HIGH-LIQUIDITY NODE</span>
+        </div>
+        <button type="button" class="btn-tier-select" data-plan="Shark Plan" data-min="10" data-apy="9.8" data-asset="BTC" style="margin-top: 14px; width: 100%; background: rgba(0,255,204,0.04); border: 1px solid #00ffcc; color: #00ffcc; padding: 10px; border-radius: 4px; font-weight: bold; font-family: monospace; cursor: pointer; text-transform: uppercase; font-size: 0.8rem;">Initialize Shark Matrix</button>
+    </div>
+
+    <div style="background: #0d1117; border: 1px solid #ff9500; border-radius: 6px; padding: 16px; position: relative; box-shadow: 0 0 20px rgba(255, 149, 0, 0.05);">
+        <div style="position: absolute; top: -10px; right: 12px; background: #ff9500; color: #0b0e14; font-size: 0.65rem; font-family: monospace; font-weight: bold; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;">ALPHA WHALE CLUSTER</div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-weight: bold; color: #ff9500; font-size: 1rem; letter-spacing: 0.5px;">WHALE 🐋 PLAN</span>
+            <span style="color: #ff9500; font-family: monospace; font-weight: bold; font-size: 1.1rem;">+15.5% <span style="font-size: 0.75rem; color: #8b949e;">APY</span></span>
+        </div>
+        <div style="font-size: 0.8rem; color: #8b949e; font-family: monospace; display: flex; flex-direction: column; gap: 4px;">
+            <span>MIN_ALLOCATION: 50.00 BTC</span>
+            <span>LOCK_DURATION: 90 DAYS</span>
+            <span>ASSET_CLASS: VIP INSTITUTIONAL RELAY</span>
+        </div>
+        <button type="button" class="btn-tier-select" data-plan="Whale Plan" data-min="50" data-apy="15.5" data-asset="BTC" style="margin-top: 14px; width: 100%; background: rgba(255,149,0,0.04); border: 1px solid #ff9500; color: #ff9500; padding: 10px; border-radius: 4px; font-weight: bold; font-family: monospace; cursor: pointer; text-transform: uppercase; font-size: 0.8rem;">Initialize Whale Matrix</button>
+    </div>
+
+</div>
+
+        .sidebar-menu {
+            background: var(--bg-panel-dark);
+            border: 1px solid var(--border-grey-dark);
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 14px;
+            color: var(--text-grey-muted);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .menu-item:hover, .menu-item.active {
+            color: var(--text-silver-bright);
+            background: var(--bg-input-field);
+        }
+
+        .menu-item.active {
+            border-left: 3px solid var(--accent-glow-green);
+            padding-left: 11px;
+        }
+
+        .menu-item .icon {
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        /* Main Interface Container Blocks */
+        .mainframe-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .content-panel {
+            background: var(--bg-panel-dark);
+            border: 1px solid var(--border-grey-dark);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .panel-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Activation Input Form Grid Layout */
+        .activation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        @media (min-width: 576px) {
+            .activation-grid {
+                grid-template-columns: 1fr auto;
+            }
+        }
+
+        .input-box {
+            background: var(--bg-input-field);
+            border: 1px solid var(--border-grey-dark);
+            color: var(--text-silver-bright);
+            padding: 14px 16px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        .input-box:focus {
+            outline: none;
+            border-color: var(--accent-glow-green);
+            box-shadow: 0 0 10px var(--accent-dim-green);
+        }
+
+        .action-button {
+            background: var(--accent-glow-green);
+            color: #040507;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: opacity 0.2s ease;
+        }
+
+        .action-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Tracking Meter Metrics Layout */
+        .metric-header-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .metric-stat h5 {
+            color: var(--text-grey-muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .metric-stat h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* Percentage Progress Tracker Line Layout */
+        .progress-wrapper {
+            margin-top: 24px;
+            padding: 0 4px;
+        }
+
+        .progress-line-bg {
+            background: var(--bg-input-field);
+            height: 6px;
+            border-radius: 3px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .progress-line-fill {
+            background: var(--accent-glow-green);
+            height: 100%;
+            border-radius: 3px;
+            width: 35%; /* Controls current dynamic location marker value */
+            box-shadow: 0 0 8px var(--accent-glow-green);
+        }
+
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-grey-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>TRADINGMARIELLANG-WEB3</h1>
+        <div class="balance-pill">
+            <span>Core Registry Balance</span>
+            <h3>$83,200.00</h3>
+        </div>
+    </header>
+
+    <!-- Master Layout Frame -->
+    <div class="workspace-layout">
+        
+        <!-- Left Nav Rail Control Block -->
+        <nav class="sidebar-menu">
+            <a href="#" class="menu-item"><span class="icon">👤</span> Profile</a>
+            <a href="#" class="menu-item"><span class="icon">💳</span> Deposit</a>
+            <a href="#" class="menu-item"><span class="icon">📥</span> Withdraw</a>
+            <a href="#" class="menu-item active"><span class="icon">🎁</span> Bonuses</a>
+            <a href="#" class="menu-item"><span class="icon">🛡️</span> Verification</a><!-- Make sure your closing panel divs are finished above this point -->
+</div> 
+
+<!-- ======================================================================
+     1. THE FIX: ADD THE OPENING SCRIPT TAG DIRECTLY BEFORE THE LOGIC
+     ====================================================================== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // --- 1. Robust Tab Navigation Routing Matrix ---
+    const menuLinks = document.querySelectorAll(".menu-item");
+    const sections = {
+        "Profile": document.getElementById("profile-section"),
+        "Deposit": document.getElementById("funds-section"),
+        "Verification": document.getElementById("verification-section"),
+        "Notifications": document.getElementById("notifications-section"),
+        "Referrals": document.getElementById("referrals-section")
+    };
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            const targetText = link.textContent.trim();
+            if (sections[targetText]) {
+                e.preventDefault();
+                menuLinks.forEach(item => item.classList.remove("active"));
+                link.classList.add("active");
+                
+                Object.values(sections).forEach(sec => { 
+                    if (sec) sec.classList.add("d-none"); 
+                });
+                sections[targetText].classList.remove("d-none");
+            }
+        });
+    });
+
+    // --- 2. High-Speed Market Stream Matrix ---
+    const tickerStream = document.getElementById("live-ticker-stream");
+
+    function ficstio(assetsArray) {
+        if (!tickerStream) return;
+        tickerStream.innerHTML = "";
+        
+        assetsArray.forEach(asset => {
+            const isTrx = asset.symbol.includes('TRX');
+            const clearPrice = asset.price.toLocaleString(undefined, { 
+                minimumFractionDigits: 2, 
+                maximumFractionDigits: isTrx ? 4 : 2 
+            });
+            const clearPercent = asset.change.toFixed(2);
+            const directionalClass = asset.change >= 0 ? 'change-up' : 'change-down';
+            const trendIndicator = asset.change >= 0 ? '+' : '';
+
+            const itemHTML = `
+                <div class="ticker-pair">
+                    <span style="color: #8b949e; font-weight: bold;">${asset.symbol}</span>
+                    <span class="ticker-price" style="color: #ffffff; font-family: monospace;">$${clearPrice}</span>
+                    <span class="ticker-change ${directionalClass}">${trendIndicator}${clearPercent}%</span>
+                </div>
+            `;
+            tickerStream.insertAdjacentHTML('beforeend', itemHTML);
+        });
+    }
+
+    async function initializeProxyStream() {
+        const fallbackAssets = [
+            { symbol: 'BTC/USDT', price: 68422.50, change: 1.45 },
+            { symbol: 'ETH/USDT', price: 3745.25, change: -0.82 },
+            { symbol: 'TRX/USDT', price: 0.1224, change: 2.11 }
+        ];
+
+        try {
+            const response = await fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,TRX&tsyms=USDT');
+            if (!response.ok) throw new Error('Handshake dropped');
+            
+            const payload = await response.json();
+            if (!payload || !payload.RAW || !payload.RAW.BTC) throw new Error('Empty footprint');
+
+            const rawData = payload.RAW;
+            const liveAssets = [
+                { symbol: 'BTC/USDT', price: rawData.BTC.USDT.PRICE, change: rawData.BTC.USDT.CHANGEPCT24HOUR },
+                { symbol: 'ETH/USDT', price: rawData.ETH.USDT.PRICE, change: rawData.ETH.USDT.CHANGEPCT24HOUR },
+                { symbol: 'TRX/USDT', price: rawData.TRX.USDT.PRICE, change: rawData.TRX.USDT.CHANGEPCT24HOUR }
+            ];
+
+            renderTickerData(liveAssets);
+            
+        } catch (error) {
+            const simulatedFluctuations = fallbackAssets.map(asset => {
+                const variance = (Math.random() - 0.5) * 0.01;
+                return {
+                    symbol: asset.symbol,
+                    price: asset.price * (1 + variance),
+                    change: asset.change + (variance * 5)
+                };
+            });
+            renderTickerData(simulatedFluctuations);
+        }
+    }
+
+    initializeProxyStream();
+    setInterval(initializeProxyStream, 10000);
+});
+// ======================================================================
+// 2. THE FIX: CLOSE THE SCRIPT ENVELOPE PROPERLY AT THE VERY END
+// ======================================================================
+</script>
+
+            <!-- ======================================================================
+     UPDATED HEADER ARCHITECTURE WITH RESPONSIVE INLINE WRAPPERS
+     ====================================================================== -->
+<div class="panel-header" style="display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; border-bottom: 1px solid #30363d; padding-bottom: 12px; margin-bottom: 20px;">
+    
+    <!-- Title String Layout -->
+    <h3 style="margin: 0; font-size: 1.1rem; letter-spacing: 0.5px; text-transform: uppercase; color: #ffffff !important; line-height: 1.3;">
+        System Gateway // Identity Verification
+    </h3>
+    
+    <!-- Status Tag Layout -->
+    <span class="terminal-status" style="position: static !important; float: none !important; display: inline-block !important; font-size: 0.7rem; font-family: monospace; background: rgba(255, 193, 7, 0.1); color: #ffc107 !important; padding: 6px 10px; border-radius: 3px; border: 1px solid rgba(255, 193, 7, 0.2); white-space: nowrap;">
+        STATUS: PENDING_VERIFICATION
+    </span>
+    
+</div>
+
+            <a href="#" class="menu-item"><span class="icon">⚙️</span> Settings</a>
+            <a href="#" class="menu-item"><span class="icon">📊</span> Transactions</a>
+        </nav>
+
+        <!-- Right Main Data Display Mainframe -->
+        <!-- ==========================================
+     NOTIFICATION CENTER INTERFACE
+     ========================================== -->
+<div id="notifications-section" 
+<!-- ==========================================
+     CUSTOMIZED SYSTEM LOG MATRIX FEED
+     ========================================== -->
+<div class="notification-feed" id="terminal-log-stream" style="display: flex; flex-direction: column; gap: 12px;">
+    <!-- What the broken tag probably looks like right now: -->
+<div id=
+
+    <!-- Hardcoded Signature Log 1: Black Kana Initialization -->
+    <div style="background: #0d1117; border-left: 3px solid #00ffcc; border-top: 1px solid #21262d; border-right: 1px solid #21262d; border-bottom: 1px solid #21262d; padding: 12px; border-radius: 0 4px 4px 0;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #8b949e; font-family: monospace; margin-bottom: 4px;">
+            <span>[SYS_INIT // BLACK_KANA]</span>
+            <span>CORE_READY</span>
+        </div>
+        <p style="margin: 0; font-size: 0.85rem; color: #c9d1d9; font-family: monospace;">
+            <span class="text-teal">> EXECUTION_SUCCESS:</span> Audio/Data matrix synced. Terminal signature verified under authorization block <span class="text-teal">BK-99X</span>.
+        </p>
+    </div>
+
+    <!-- Hardcoded Signature Log 2: Obsidian Script Core -->
+    <div style="background: #0d1117; border-left: 3px solid #8b949e; border-top: 1px solid #21262d; border-right: 1px solid #21262d; border-bottom: 1px solid #21262d; padding: 12px; border-radius: 0 4px 4px 0;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #8b949e; font-family: monospace; margin-bottom: 4px;">
+            <span>[RUNTIME // OBSIDIAN_SCRIPT]</span>
+            <span>STABLE</
         /* 3D ROTATING BANNER */
         #ticker {
             background: #080808;
